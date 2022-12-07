@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+
+    <!--Font Awesome cdn link-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!--css link-->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="icon"></div>
+
+    <div id="menu">
+      <ul>
+        <li>Home</li>
+        <li>Serviços</li>
+        <li>Sobre</li>
+        <li>Contatos</li>
+        <li>Ajuda ?</li>
+      </ul>
+    </div>
+
+    <script>
+      const icon = document.getElementById("icon");
+
+      const menu = document.getElementById("menu");
+
+      icon.onclick = function () {
+        icon.classList.toggle("active");
+        menu.classList.toggle("active");
+      };
+
+      document.onclick = function (clickEvent) {
+        if (
+          clickEvent.target.id !== "menu" &&
+          clickEvent.target.id !== "icon"
+        ) {
+          icon.classList.remove("active");
+          menu.classList.remove("active");
+        }
+      };
+    </script>
+  </body>
+</html>

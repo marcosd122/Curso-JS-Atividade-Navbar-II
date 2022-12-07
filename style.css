@@ -1,0 +1,122 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    transition: all .3s ease-out;
+    text-transform: uppercase;
+    font-weight: normal;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+  }
+  
+  :root {
+    --cor-primaria: #6c63ff;
+    --cor-sucesso: #00bf8e;
+    --cor-alerta: #f7c94b;
+    --cor-perigo: #f75842;
+    --cor-perigo-variante: rgba(247, 88, 66, 0.4);
+    --cor-branco: #fff;
+    --cor-clara: rgba(255, 255, 255, 0.7);
+    --cor-escura: #000;
+    --cor-bg: #1f2641;
+    --cor-bg1: #2e3267;
+    --cor-bg2: #424890;
+  
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+      
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+    background: var(--cor-bg);
+    min-height: 100vh;    
+    background-image: url(img/bg-texture.png);
+  }
+
+#icon {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   width: 50px;
+   height: 50px;
+   /* background: var(--cor-sucesso); */
+   border-radius: 5px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 2;
+}
+
+#icon::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: var(--cor-branco);
+    transform: translateY(-10px);
+    transition: .4s;
+}
+
+#icon::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: var(--cor-branco);
+    box-shadow: 0 10px 0 0 var(--cor-branco);
+    transition: .4s;
+}
+
+.active#icon::before {
+    transform: rotate(45deg);
+    background: var(--cor-perigo);
+}
+
+.active#icon::after {
+    transform: rotate(-45deg);
+    box-shadow: none;
+    background: var(--cor-perigo);
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    width: 310px;
+    height: 100vh;
+    background: var(--cor-bg1);   
+    transition: .5s; 
+}
+
+#menu ul {
+    position: relative;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+#menu ul li{
+    list-style: none;
+    color: var(--cor-branco);
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#menu ul li:hover{
+    background: var(--cor-primaria);
+}
+
+.active#menu {
+    left: 0;
+}
